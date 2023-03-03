@@ -1,6 +1,4 @@
-package me.proton.jobforandroid.material_gb_nasaapi.ui.main
-
-
+package me.proton.jobforandroid.material_gb_nasaapi.ui.pod_fragment
 
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -22,7 +20,7 @@ import retrofit2.Response
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class MainViewModel(
+class PODViewModel(
     private val retrofitImpl: Repository = PODRetrofitImpl(),
 ) : ViewModel(), LifecycleObserver, CoroutineScope by MainScope() {
     val liveData: MutableLiveData<PictureOfTheDayData> = MutableLiveData()
