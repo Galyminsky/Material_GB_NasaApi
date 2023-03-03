@@ -10,4 +10,8 @@
     <string name="chip_text_today">Сегодня</string>
     <string name="chip_text_yesterday">Вчера</string>
     <string name="chip_text_day_before_yesterday">Позавчера</string>
+    <string name="theme_select_label_text">Тема:</string>
+    <string name="chip_light_text">Light</string>
+    <string name="chip_sand_text">Sand</string>
+    <string name="chip_aqua_text">Aqua</string>
 </resources>

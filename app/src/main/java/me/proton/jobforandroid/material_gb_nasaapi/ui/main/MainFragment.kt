@@ -19,6 +19,7 @@ import me.proton.jobforandroid.material_gb_nasaapi.model.PictureOfTheDayData
 import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODRetrofitImpl
 import me.proton.jobforandroid.material_gb_nasaapi.ui.MainActivity
 import me.proton.jobforandroid.material_gb_nasaapi.ui.nav_fragment.BottomNavigationDrawerFragment
+import me.proton.jobforandroid.material_gb_nasaapi.ui.settings.SettingsFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
 
@@ -90,6 +91,14 @@ class MainFragment : Fragment() {
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
             R.id.app_bar_fav -> toast("Favourite")
+            R.id.app_bar_settings -> {
+                activity?.supportFragmentManager?.let { it
+                    .beginTransaction()
+                    .replace(R.id.container, SettingsFragment.newInstance())
+                    .addToBackStack("")
+                    .commit()
+                }
+            }
             android.R.id.home -> {
                 activity?.let {
                     BottomNavigationDrawerFragment().show(it.supportFragmentManager, "tag")

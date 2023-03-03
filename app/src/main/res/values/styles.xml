@@ -1,7 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="fontFamily">@font/advent_pro_thin</item>
+        <item name="android:fontFamily">@font/advent_pro_thin</item>
+
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryDark</item>
+        <item name="colorOnPrimary">#FFFFFF</item>
+        <item name="colorSecondary">@color/colorAccent</item>
+        <item name="colorSecondaryVariant">#0039CB</item>
+        <item name="colorOnSecondary">#FFFFFF</item>
+        <item name="colorError">#F44336</item>
+        <item name="colorOnError">#FFFFFF</item>
+        <item name="colorSurface">#FFFFFF</item>
+        <item name="colorOnSurface">#212121</item>
+        <item name="android:colorBackground">@color/background</item>
+        <item name="colorOnBackground">#212121</item>
+        <item name="shapeAppearanceSmallComponent">@style/AppShapeAppearance.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/AppShapeAppearance.MediumComponent</item>
+    </style>
+
+    <style name="AppShapeAppearance.SmallComponent" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="AppShapeAppearance.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">5dp</item>
+    </style>
+
+    <style name="AppThemeLight" parent="AppTheme">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="AppThemeSand" parent="AppTheme">
+        <item name="colorPrimary">@color/colorSandPrimary</item>
+        <item name="colorPrimaryDark">@color/colorSandPrimaryDark</item>
+        <item name="colorAccent">@color/colorSandAccent</item>
+    </style>
+
+    <style name="AppThemeAqua" parent="AppTheme">
+        <item name="colorPrimary">@color/colorAquaPrimary</item>
+        <item name="colorPrimaryDark">@color/colorAquaPrimaryDark</item>
+        <item name="colorAccent">@color/colorAquaAccent</item>
+    </style>
+
+    <style name="BottomAppBar" parent="Widget.MaterialComponents.BottomAppBar.Colored">
+        <item name="backgroundTint">@attr/colorPrimary</item>
+    </style>
+
+    <style name="FAButton" parent="Widget.MaterialComponents.FloatingActionButton">
+        <item name="backgroundTint">@attr/colorAccent</item>
     </style>
 </resources>

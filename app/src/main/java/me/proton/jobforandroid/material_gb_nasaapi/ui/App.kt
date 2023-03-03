@@ -10,6 +10,8 @@ import org.koin.core.context.startKoin
 class App : Application() {
     companion object {
         lateinit var appInstance: App
+        const val APP_PREF_NAME = "AppSettings"
+        const val PREF_THEME_KEY = "AppTheme"
     }
 
     override fun onCreate() {

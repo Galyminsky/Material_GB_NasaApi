@@ -4,4 +4,12 @@
     <color name="colorPrimaryDark">#00574B</color>
     <color name="colorAccent">#D81B60</color>
     <color name="color_gray">#66000000</color>
+    <color name="background">#FFFFFF</color>
+    <color name="ic_launcher_background">#3DDCA4</color>
+    <color name="colorSandPrimary">#FAED79</color>
+    <color name="colorSandPrimaryDark">#79733D</color>
+    <color name="colorSandAccent">#4CAF50</color>
+    <color name="colorAquaPrimary">#36CEF4</color>
+    <color name="colorAquaPrimaryDark">#36737A</color>
+    <color name="colorAquaAccent">#4963F5</color>
 </resources>
