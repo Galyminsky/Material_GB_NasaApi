@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene xmlns:motion="http://schemas.android.com/tools">
+
+    <Transition
+        motion:constraintSetEnd="@layout/main_fragment"
+        motion:constraintSetStart="@layout/main_fragment_start"
+        motion:duration="1000">
+
+        <OnClick motion:targetId="@id/wiki_button" />
+    </Transition>
+</MotionScene>
