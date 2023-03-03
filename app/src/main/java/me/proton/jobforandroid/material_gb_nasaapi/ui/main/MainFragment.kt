@@ -31,9 +31,9 @@ import me.proton.jobforandroid.material_gb_nasaapi.model.repository.RepositoryIm
 import me.proton.jobforandroid.material_gb_nasaapi.ui.MainActivity
 import me.proton.jobforandroid.material_gb_nasaapi.ui.nav_fragment.BottomNavigationDrawerFragment
 import me.proton.jobforandroid.material_gb_nasaapi.ui.settings.SettingsFragment
+import me.proton.jobforandroid.material_gb_nasaapi.ui.work_list_fragment.WorkListFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
-import me.proton.jobforandroid.material_gb_nasaapi.ui.work_list_fragment.WorkListFragment
 
 
 class MainFragment : Fragment() {
@@ -53,11 +53,12 @@ class MainFragment : Fragment() {
         return binding.root
     }
 
-//    override fun onActivityCreated(savedInstanceState: Bundle?) {
-//        super.onActivityCreated(savedInstanceState)
-//        viewModel.getData()
-//            .observe(viewLifecycleOwner, Observer<PictureOfTheDayData> { renderData(it) })
-//    }
+/*    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        viewModel.getData()
+            .observe(viewLifecycleOwner,
+                InvalidationTracker.Observer<PictureOfTheDayData> { renderData(it) })
+    }*/
 
     @RequiresApi(Build.VERSION_CODES.O)
     override fun onViewCreated(view: View, savedInstanceState: Bundle?): Unit = with(binding) {
@@ -239,3 +240,5 @@ class MainFragment : Fragment() {
         private var isMain = true
     }
 }
+
+
