@@ -1,9 +1,15 @@
 package me.proton.jobforandroid.material_gb_nasaapi.ui.main
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.Typeface
 import android.net.Uri
 import android.os.Build
 import android.os.Bundle
+import android.text.Spannable
+import android.text.SpannableString
+import android.text.style.ForegroundColorSpan
+import android.text.style.StyleSpan
 import android.transition.ChangeBounds
 import android.transition.ChangeImageTransform
 import android.transition.TransitionManager
@@ -166,8 +172,17 @@ class MainFragment : Fragment() {
                         error(R.drawable.ic_load_error_vector)
                         placeholder(R.drawable.ic_no_photo_vector)
                     }
+                    val spannableString = SpannableString(data.serverResponseData.explanation)
+                    spannableString.setSpan(
+                        ForegroundColorSpan(Color.RED),
+                        0, 1,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
+                    spannableString.setSpan(
+                        StyleSpan(Typeface.ITALIC),
+                        0, spannableString.length,
+                        Spannable.SPAN_EXCLUSIVE_EXCLUSIVE)
                     bottomSheetContainer.bottomSheetDescription.text =
-                        data.serverResponseData.explanation
+                        spannableString
                     bottomSheetContainer.bottomSheetDescriptionHeader.text =
                         data.serverResponseData.title
                     bottomSheetBehavior.state = BottomSheetBehavior.STATE_HALF_EXPANDED
