@@ -21,19 +21,20 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import me.proton.jobforandroid.material_gb_nasaapi.R
 import me.proton.jobforandroid.material_gb_nasaapi.databinding.MainFragmentBinding
 import me.proton.jobforandroid.material_gb_nasaapi.model.PictureOfTheDayData
-import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODRetrofitImpl
+import me.proton.jobforandroid.material_gb_nasaapi.model.repository.RepositoryImpl
 import me.proton.jobforandroid.material_gb_nasaapi.ui.MainActivity
 import me.proton.jobforandroid.material_gb_nasaapi.ui.nav_fragment.BottomNavigationDrawerFragment
 import me.proton.jobforandroid.material_gb_nasaapi.ui.settings.SettingsFragment
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
+import me.proton.jobforandroid.material_gb_nasaapi.ui.work_list_fragment.WorkListFragment
 
 
 class MainFragment : Fragment() {
 
     private lateinit var binding: MainFragmentBinding
     private val viewModel: MainViewModel by viewModel {
-        parametersOf(PODRetrofitImpl())
+        parametersOf(RepositoryImpl())
     }
     private lateinit var bottomSheetBehavior: BottomSheetBehavior<ConstraintLayout>
     private var isExpanded = false
@@ -129,10 +130,16 @@ class MainFragment : Fragment() {
 
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
         when (item.itemId) {
-            R.id.app_bar_fav -> toast("Favourite")
+            R.id.app_bar_fav -> {
+                activity?.supportFragmentManager?.beginTransaction()
+                    ?.replace(R.id.container, WorkListFragment.newInstance())
+                    ?.addToBackStack("")
+                    ?.commit()
+            }
             R.id.app_bar_settings -> {
                 activity?.supportFragmentManager?.beginTransaction()
-                    ?.replace(R.id.container, SettingsFragment.newInstance())?.addToBackStack("")
+                    ?.replace(R.id.container, SettingsFragment.newInstance())
+                    ?.addToBackStack("")
                     ?.commit()
             }
             android.R.id.home -> {

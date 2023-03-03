@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:padding="5dp">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        android:textColor="@color/colorPrimaryDark"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/content"
+        tools:text="Title of note"/>
+
+    <TextView
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="@color/colorPrimary"
+        tools:text="@tools:sample/lorem"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@+id/time"/>
+
+    <TextView
+        android:id="@+id/time"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:gravity="end"
+        tools:text="12.07.2021"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/content"
+        app:layout_constraintBottom_toTopOf="parent"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveUp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintStart_toEndOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toTopOf="@id/moveDown"
+        app:srcCompat="@android:drawable/arrow_up_float"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/moveDown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:tint="@color/design_default_color_error"
+        app:layout_constraintStart_toEndOf="@id/title"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/moveUp"
+        app:srcCompat="@android:drawable/arrow_down_float"/>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/removeItemImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        app:layout_constraintStart_toEndOf="@id/moveUp"
+        app:layout_constraintEnd_toStartOf="@+id/dragHandleImageView"
+        app:layout_constraintTop_toBottomOf="@id/moveUp"
+        app:layout_constraintBottom_toTopOf="@id/moveDown"
+        app:srcCompat="@drawable/ic_archive" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/dragHandleImageView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:tint="@color/cardview_shadow_start_color"
+        app:layout_constraintBottom_toBottomOf="@+id/removeItemImageView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/removeItemImageView"
+        app:layout_constraintTop_toTopOf="@+id/removeItemImageView"
+        app:srcCompat="@drawable/ic_hamburger_menu_bottom_bar" />
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#000"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

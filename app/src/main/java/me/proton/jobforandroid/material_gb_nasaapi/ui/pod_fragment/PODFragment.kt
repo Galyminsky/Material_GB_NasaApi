@@ -11,7 +11,7 @@ import coil.load
 import me.proton.jobforandroid.material_gb_nasaapi.R
 import me.proton.jobforandroid.material_gb_nasaapi.databinding.PagePodFragmentBinding
 import me.proton.jobforandroid.material_gb_nasaapi.model.PictureOfTheDayData
-import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODRetrofitImpl
+import me.proton.jobforandroid.material_gb_nasaapi.model.repository.RepositoryImpl
 import me.proton.jobforandroid.material_gb_nasaapi.utils.toast
 import org.koin.androidx.viewmodel.ext.android.viewModel
 import org.koin.core.parameter.parametersOf
@@ -20,7 +20,7 @@ import org.koin.core.parameter.parametersOf
 class PODFragment : Fragment() {
     private lateinit var binding: PagePodFragmentBinding
     private val viewModel: PODViewModel by viewModel {
-        parametersOf(PODRetrofitImpl())
+        parametersOf(RepositoryImpl())
     }
 
     override fun onCreateView(

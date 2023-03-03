@@ -12,6 +12,7 @@ class App : Application() {
         lateinit var appInstance: App
         const val APP_PREF_NAME = "AppSettings"
         const val PREF_THEME_KEY = "AppTheme"
+        const val DATE_TIME_FORMAT_PATTERN = "dd.MM.yyyy HH:mm"
     }
 
     override fun onCreate() {

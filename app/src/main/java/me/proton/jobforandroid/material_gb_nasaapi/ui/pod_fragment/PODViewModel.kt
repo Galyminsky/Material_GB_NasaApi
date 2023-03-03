@@ -11,9 +11,9 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import me.proton.jobforandroid.material_gb_nasaapi.BuildConfig
 import me.proton.jobforandroid.material_gb_nasaapi.model.PictureOfTheDayData
-import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODRetrofitImpl
 import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODServerResponseData
 import me.proton.jobforandroid.material_gb_nasaapi.model.repository.Repository
+import me.proton.jobforandroid.material_gb_nasaapi.model.repository.RepositoryImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -21,7 +21,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class PODViewModel(
-    private val retrofitImpl: Repository = PODRetrofitImpl(),
+    private val retrofitImpl: Repository = RepositoryImpl(),
 ) : ViewModel(), LifecycleObserver, CoroutineScope by MainScope() {
     val liveData: MutableLiveData<PictureOfTheDayData> = MutableLiveData()
 

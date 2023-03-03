@@ -13,9 +13,9 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import me.proton.jobforandroid.material_gb_nasaapi.BuildConfig
 import me.proton.jobforandroid.material_gb_nasaapi.model.PictureOfTheDayData
-import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODRetrofitImpl
 import me.proton.jobforandroid.material_gb_nasaapi.model.repository.PODServerResponseData
 import me.proton.jobforandroid.material_gb_nasaapi.model.repository.Repository
+import me.proton.jobforandroid.material_gb_nasaapi.model.repository.RepositoryImpl
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
@@ -23,7 +23,7 @@ import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
 class MainViewModel(
-    private val retrofitImpl: Repository = PODRetrofitImpl(),
+    private val repository: Repository = RepositoryImpl(),
 ) : ViewModel(), LifecycleObserver, CoroutineScope by MainScope() {
     val liveData: MutableLiveData<PictureOfTheDayData> = MutableLiveData()
 
@@ -43,7 +43,7 @@ class MainViewModel(
         if (apiKey.isBlank()) {
             PictureOfTheDayData.Error(Throwable("You need API key"))
         } else {
-            retrofitImpl.getRetrofitImpl()
+            repository.getRetrofitImpl()
                 .getPictureOfTheDay(apiKey, date.format(DateTimeFormatter.ISO_DATE))
                 .enqueue(object :
                     Callback<PODServerResponseData> {
